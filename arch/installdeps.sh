@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Set locale to prevent perl warnings
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Update package lists
 echo "Updating package database..."
 sudo pacman -Syu --noconfirm
@@ -15,6 +19,7 @@ sudo pacman -S --noconfirm \
     ttf-jetbrains-mono-nerd \
     git \
     github-cli \
+    btop \
     wget \
     curl \
     base-devel
@@ -58,13 +63,13 @@ fi
 
 # Run stow for each directory in the repo
 echo "Setting up dotfiles with stow..."
-cd "$HOME/stow" || exit 1
+cd "$HOME/stow/arch" || exit 1
 
 for dir in */; do
     if [ -d "$dir" ]; then
         dirname="${dir%/}"
         echo "Stowing $dirname..."
-        stow "$dirname"
+        stow -t "$HOME" "$dirname"
     fi
 done
 
