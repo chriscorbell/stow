@@ -1,6 +1,11 @@
 #!/bin/bash
 
-# Set locale to prevent perl warnings
+# Generate and set locale to prevent perl warnings
+echo "Configuring locale..."
+sudo apt update -qq
+sudo apt install -y locales
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
@@ -19,6 +24,7 @@ sudo apt install -y \
     git \
     wget \
     curl \
+    zsh \
     build-essential
 
 echo "Installation complete!"
@@ -71,3 +77,8 @@ for dir in */; do
 done
 
 echo "Dotfiles setup complete!"
+
+# Change default shell to zsh
+echo "Changing default shell to zsh..."
+chsh -s /usr/bin/zsh
+echo "Shell changed to zsh. Please log out and back in for changes to take effect."
