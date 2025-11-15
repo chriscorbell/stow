@@ -27,9 +27,9 @@ setopt PROMPT_SUBST             # Allow variable expansion in prompt
 # ==============================
 
 alias ls="ls -alh --color=always"
-alias up="sudo nala update && sudo apt upgrade -y"
-alias in="sudo nala install"
-alias un="sudo nala purge"
+alias up="yay -Syuu"
+alias in="yay -S"
+alias un="yay -Rns"
 alias grep='grep --color=auto'
 alias ga='git add .'
 alias gc='git commit -m'
