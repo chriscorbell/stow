@@ -82,4 +82,3 @@ echo "Dotfiles setup complete!"
 # Change default shell to zsh
 echo "Changing default shell to zsh..."
 chsh -s /usr/bin/zsh
-echo "Shell changed to zsh. Please log out and back in for changes to take effect."
