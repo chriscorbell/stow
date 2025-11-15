@@ -27,9 +27,9 @@ setopt PROMPT_SUBST             # Allow variable expansion in prompt
 # ==============================
 
 alias ls="ls -alh --color=always"
-alias up="yay -Syuu"
-alias in="yay -S"
-alias un="yay -Rns"
+alias up="sudo nala update && sudo apt upgrade -y"
+alias in="sudo nala install"
+alias un="sudo nala purge"
 alias grep='grep --color=auto'
 alias ga='git add .'
 alias gc='git commit -m'
@@ -53,6 +53,7 @@ export VISUAL="nano"
 export PAGER="less"
 export LESS="-R"
 export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
 # ==============================
 #  Zinit Plugin Manager
