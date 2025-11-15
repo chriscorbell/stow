@@ -11,7 +11,6 @@ sudo apt update
 # Install packages
 echo "Installing packages..."
 sudo apt install -y \
-    fastfetch \
     dunst \
     nano \
     stow \
