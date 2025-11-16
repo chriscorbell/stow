@@ -21,7 +21,6 @@ sudo apt install -y \
     stow \
     kitty \
     fzf \
-    yazi \
     ripgrep \
     bat \
     neovim \
