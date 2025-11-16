@@ -20,6 +20,11 @@ sudo apt install -y \
     nano \
     stow \
     kitty \
+    fzf \
+    yazi \
+    ripgrep \
+    bat \
+    neovim \
     btop \
     nala \
     git \
@@ -29,6 +34,16 @@ sudo apt install -y \
     build-essential
 
 echo "Installation complete!"
+
+# Install LazyVim
+echo "Installing LazyVim..."
+if [ -d "$HOME/.config/nvim" ]; then
+    echo "Neovim config directory already exists, skipping LazyVim installation..."
+else
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
+    echo "LazyVim installed!"
+fi
 
 # Install GitHub CLI
 echo "Installing GitHub CLI..."

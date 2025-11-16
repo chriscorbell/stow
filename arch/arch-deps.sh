@@ -22,6 +22,11 @@ sudo pacman -S --noconfirm \
     ttf-jetbrains-mono-nerd \
     git \
     github-cli \
+    yazi \
+    neovim \
+    ripgrep \
+    fzf \
+    bat \
     btop \
     wget \
     curl \
@@ -29,6 +34,16 @@ sudo pacman -S --noconfirm \
     base-devel
 
 echo "Installation complete!"
+
+# Install LazyVim
+echo "Installing LazyVim..."
+if [ -d "$HOME/.config/nvim" ]; then
+    echo "Neovim config directory already exists, skipping LazyVim installation..."
+else
+    git clone https://github.com/LazyVim/starter ~/.config/nvim
+    rm -rf ~/.config/nvim/.git
+    echo "LazyVim installed!"
+fi
 
 # Install yay AUR helper
 echo "Installing yay..."

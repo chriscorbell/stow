@@ -31,6 +31,7 @@ alias up="sudo nala update && sudo apt upgrade -y"
 alias in="sudo nala install"
 alias un="sudo nala purge"
 alias grep='grep --color=auto'
+alias cat="bat"
 alias ga='git add .'
 alias gc='git commit -m'
 alias gp='git push origin main'
@@ -43,6 +44,15 @@ gacp() {
   git push origin "$branch"
 }
 
+nala-fzf() {
+  local pkgs
+  pkgs="$(
+    apt-cache pkgnames \
+    | fzf --multi --ansi --height=80% --layout=reverse \
+          --preview 'nala show {}' --preview-window=right,60%
+  )" || return
+  [ -n "$pkgs" ] && sudo nala install $pkgs
+}
 
 # ==============================
 #  Environment

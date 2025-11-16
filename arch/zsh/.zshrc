@@ -30,7 +30,9 @@ alias ls="ls -alh --color=always"
 alias up="yay -Syuu"
 alias in="yay -S"
 alias un="yay -Rns"
-alias pacfzf="sudo pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias cat="bat"
+alias pacf="sudo pacman -Slq | fzf --multi --preview 'pacman -Si {1}' | xargs -ro sudo pacman -S"
+alias yayf="yay -Slq | fzf --multi --preview 'yay -Si {1}' | xargs -ro yay -S"
 alias grep='grep --color=auto'
 alias ga='git add .'
 alias gc='git commit -m'
