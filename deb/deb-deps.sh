@@ -11,7 +11,7 @@ export LC_ALL=en_US.UTF-8
 
 # Update package lists
 echo "Updating package lists..."
-sudo apt update
+sudo apt update && sudo apt upgrade -y
 
 # Install packages
 echo "Installing packages..."
