@@ -96,24 +96,3 @@ bindkey "\e[6~" history-beginning-search-forward
 
 # Fix Delete
 bindkey "^[[3~" delete-char
-
-# ==============================
-#  Terminal title (optional)
-# ==============================
-
-precmd() { print -Pn "\e]0;%n@%m: %~\a" }
-
-# ==============================
-#  Source local overrides
-# ==============================
-
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-. "$HOME/.local/bin/env"
-
-# fnm
-FNM_PATH="/home/chris/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
