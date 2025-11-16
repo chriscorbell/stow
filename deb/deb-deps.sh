@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Generate and set locale to prevent perl warnings
+# Generate and set locale
 echo "Configuring locale..."
 sudo apt update -qq
 sudo apt install -y locales
@@ -20,7 +20,8 @@ sudo apt install -y \
     nano \
     stow \
     kitty \
-	btop \
+    btop \
+    nala \
     git \
     wget \
     curl \
