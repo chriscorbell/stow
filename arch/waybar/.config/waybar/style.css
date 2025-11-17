@@ -1,84 +1,98 @@
-@import "../omarchy/current/theme/waybar.css";
+@define-color bg    #1a1b26; 
+@define-color fg    #a9b1d6; 
+@define-color blk   #32344a; 
+@define-color red   #f7768e; 
+@define-color grn   #9ece6a; 
+@define-color ylw   #e0af68; 
+@define-color blu   #7aa2f7; 
+@define-color mag   #ad8ee6; 
+@define-color cyn   #0db9d7; 
+@define-color brblk #444b6a; 
+@define-color white #ffffff; 
 
 * {
-  background-color: @background;
-  color: @foreground;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: 'JetBrainsMono Nerd Font';
-  font-size: 12px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.modules-left {
-  margin-left: 8px;
-}
-
-.modules-right {
-  margin-right: 8px;
+window#waybar {
+    background-color: @bg;
+    color: @fg;
 }
 
 #workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
+    padding: 2px 6px;
+    color: @blu;
+    border-radius: 0px;
+    background: transparent;
 }
-
+#workspaces button.active {
+    color: @blk;
+    background-color: @mag;
+}
 #workspaces button.empty {
-  opacity: 0.5;
+    color: @fg;
+}
+#workspaces button.empty.active {
+    color: @blk;
+    background-color: @mag;
 }
 
-#cpu,
+#workspaces button.urgent {
+    background-color: @red;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#custom-clock,
+#custom-sep,
 #battery,
-#pulseaudio,
-#custom-omarchy,
-#custom-screenrecording-indicator,
-#custom-update {
-  min-width: 12px;
-  margin: 0 7.5px;
-}
-
+#cpu,
+#memory,
+#disk,
+#network,
 #tray {
-  margin-right: 16px;
+    padding: 0 8px;
+    color: @white;
 }
 
-#bluetooth {
-  margin-right: 17px;
+#custom-sep {
+    color: @brblk;
+}
+
+#custom-clock {
+    color: @blu;
+}
+
+#battery {
+    color: @blu;
+}
+
+#disk {
+    color: @blu;
+}
+
+#memory {
+    color: @blu;
+}
+
+#cpu {
+    color: @blu;
 }
 
 #network {
-  margin-right: 13px;
+    color: @blu;
 }
 
-#custom-expand-icon {
-  margin-right: 20px;
+#network.disconnected {
+    background-color: @red;
 }
 
-tooltip {
-  padding: 2px;
+#tray {
+    background-color: #2980b9;
 }
 
-#custom-update {
-  font-size: 10px;
-}
-
-#clock,
-#custom-clock {
-  margin-left: 8.75px;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-#custom-screenrecording-indicator {
-  min-width: 12px;
-  margin-left: 8.75px;
-  font-size: 10px;
-}
-
-#custom-screenrecording-indicator.active {
-  color: #a55555;
-}
